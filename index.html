@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Start Up Building</title>
+    <meta name="description" content="Jonathan Bouligny - Virtual Reality Project 1">
+	    <script src="https://aframe.io/releases/0.7.0/aframe.js"></script>
+		<script src="https://rawgit.com/feiss/aframe-environment-component/master/dist/aframe-environment-component.min.js"></script> 
+		<script src="//cdn.rawgit.com/donmccurdy/aframe-extras/v3.13.1/dist/aframe-extras.min.js"></script>
+  </head>
+  <body>
+    <a-scene physics stats >
+	
+<!---Textures--->	
+	       <img id="floor" src="images/floor.jpg">
+          <img id="wall" src="images/wall.jpg">
+ +        <img id="ceiling" src="images/ceiling.jpg">
+          <img id="exterior" src="images/exterior.jpg">
+
+		<!---Player Camera--->
+	      <a-entity camera="userHeight: 1.6"
+                universal-controls
+                kinematic-body>
+				<a-entity raycaster="far: 150; objects: .intersectable" cursor geometry="primitive: ring; radiusOuter: 0.015;
+                              radiusInner: 0.01; segmentsTheta: 32" material="color: #283644; shader: flat" position="0 0 -0.75"></a-entity>
+      </a-entity>
+	  
+<!---Environment--->		
+		  <a-entity environment="preset: forest; playArea:1.2899999999999998;  groundColor: #445;"></a-entity>
+<!---Play Area Colliders--->
+  <a-entity position="0 0 0" rotation="-90 0 0" scale="50 50 0" geometry="primitive:plane" visible = "false" static-body></a-entity>
+  <a-plane static-body position = "0 2.5 -18" color="#FFF" height="5" width="50" visible = "false"></a-plane>
+  <a-plane static-body position = "0 2.5 18" rotation = "0 -180 0"color="#FFF" height="5" width="50" visible = "false"></a-plane>
+  <a-plane static-body position = "18 2.5 0" rotation = "0 -90 0"color="#FFF" height="5" width="50" visible = "false"></a-plane>
+  <a-plane static-body position = "-18 2.5 0" rotation = "0 90 0"color="#FFF" height="5" width="50" visible = "false"></a-plane>
+
+ <!---Main Building--->
+	<a-entity position="-5 5.01 -6.5" geometry="width:20;depth:15;height:10" material="side:double; src:#exterior; repeat: 50 20" id="Main Building"></a-entity>
+	<!--colliders--->
+	<a-entity position="-4.993 0.5 -14" rotation="0 180 0" visible="false" id="collider" geometry="width:20;primitive:plane" static-body="sphereRadius:NaN"></a-entity>
+	<a-entity position="-15 0.5 -6.5" rotation="0 -90 0" visible="false" id="collider" geometry="width:15;primitive:plane" static-body="sphereRadius:NaN"></a-entity>
+	<a-entity position="-9.92 0.5 0.871" visible="false" geometry="width:10;primitive:plane" id="collider" static-body="sphereRadius:NaN"></a-entity>
+	<a-entity position="-3.964 0.5 1" rotation="0 -180 0" geometry="primitive:plane;width:3.2" static-body="sphereRadius:NaN" id="collider-2" visible="false"></a-entity>
+	<a-entity position="4.055 0.5 1" rotation="0 -180 0" geometry="primitive:plane;width:3.2" static-body="sphereRadius:NaN" id="collider-3" visible="false"></a-entity>
+	<a-entity position="0 1.522 1.001" geometry="primitive:plane;height:3;width:3.4" id="door-2"></a-entity>
+	
+ <!---Reception Area--->
+	<a-entity position="0 2.501 5" geometry="depth:8;width:10;height:5" material="side:double; src:#exterior; repeat: 50 20" id="Reception" ></a-entity>
+	<!---colliders--->	
+	<a-entity position="-5 0.5 5" rotation="0 -90 0" geometry="primitive:plane;width:8" static-body="sphereRadius:NaN" id="collider" visible="false"></a-entity>
+	<!--this next collider also extends over the right side of the main cube-->
+	<a-entity position="5 0.51 -2.5" rotation="0 90 0" geometry="width:23;primitive:plane" static-body="sphereRadius:NaN" id="collider" visible="false"></a-entity>
+	<a-entity position="-3.964 0.5 9" rotation="0 -180 0" geometry="primitive:plane;width:3.2" static-body="sphereRadius:NaN" id="collider" visible="false"></></a-entity>
+	<a-entity position="4.055 0.5 9" rotation="0 -180 0" geometry="width:3.2;primitive:plane" static-body="sphereRadius:NaN" id="collider" visible="false"></></a-entity>
+	<a-entity position="0 1.522 9.02" geometry="height:3;width:3.4;primitive:plane" id="door"></a-entity>
+	<a-entity position="1.928 3.002 5.51" id="receptionLight" light=""></a-entity>
+
+    </a-scene>
+  </body>
+</html>
