@@ -11,12 +11,19 @@
   <body>
     <a-scene physics stats >
 	
-<!---Textures--->	
+<!---Textures--->
+		<a-assets>	
 	       <img id="floor" src="images/floor.jpg">
           <img id="wall" src="images/wall.jpg">
  +        <img id="ceiling" src="images/ceiling.jpg">
           <img id="exterior" src="images/exterior.jpg">
-
+		  <img id="door" src="images/door.jpg">
+<!---Models--->
+		<a-assets>
+				<a-asset-item id="receptiontable-obj" src="models/receptiondesk/receptiontable.obj"></a-asset-item>
+				<a-asset-item id="receptiontable-mtl" src="models/receptiondesk/receptiontable.mtl"></a-asset-item>
+			  </a-assets>
+		</a-assets>
 		<!---Player Camera--->
 	      <a-entity camera="userHeight: 1.6"
                 universal-controls
@@ -42,8 +49,8 @@
 	<a-entity position="-9.92 0.5 0.871" visible="false" geometry="width:10;primitive:plane" id="collider" static-body="sphereRadius:NaN"></a-entity>
 	<a-entity position="-3.964 0.5 1" rotation="0 -180 0" geometry="primitive:plane;width:3.2" static-body="sphereRadius:NaN" id="collider-2" visible="false"></a-entity>
 	<a-entity position="4.055 0.5 1" rotation="0 -180 0" geometry="primitive:plane;width:3.2" static-body="sphereRadius:NaN" id="collider-3" visible="false"></a-entity>
-	<a-entity position="0 1.522 1.1" geometry="primitive:plane;height:3;width:3.4" id="door-2"></a-entity>
-	<a-entity position="0 1.522 0.9" geometry="primitive:plane;height:3;width:3.4" id="door-3" rotation="0 180 0"></a-entity>
+	<a-entity position="0 1.522 1.1" geometry="primitive:plane;height:3;width:3.4" material="side:double; src:#door;" id="door-2"></a-entity>
+	<a-entity position="0 1.522 0.9" geometry="primitive:plane;height:3;width:3.4" material="side:double; src:#door;" id="door-3" rotation="0 180 0"></a-entity>
 	
  <!---Reception Area--->
 	<a-entity position="0 2.501 5" geometry="depth:8;width:10;height:5" material="side:double; src:#exterior; repeat: 50 20" id="Reception" ></a-entity>
@@ -53,9 +60,11 @@
 	<a-entity position="5 0.51 -2.5" rotation="0 90 0" geometry="width:23;primitive:plane" static-body="sphereRadius:NaN" id="collider" visible="false"></a-entity>
 	<a-entity position="-3.964 0.5 9" rotation="0 -180 0" geometry="primitive:plane;width:3.2" static-body="sphereRadius:NaN" id="collider" visible="false"></></a-entity>
 	<a-entity position="4.055 0.5 9" rotation="0 -180 0" geometry="width:3.2;primitive:plane" static-body="sphereRadius:NaN" id="collider" visible="false"></></a-entity>
-	<a-entity position="0 1.522 9.1" geometry="height:3;width:3.4;primitive:plane" id="door"></a-entity>
-	<a-entity position="0 1.522 8.9" geometry="primitive:plane;height:3;width:3.4" id="door-4" rotation="0 180 0"></a-entity>
+	<a-entity position="0 1.522 9.1" geometry="height:3;width:3.4;primitive:plane" material="side:double; src:#door;" id="door"></a-entity>
+	<a-entity position="0 1.522 8.9" geometry="primitive:plane;height:3;width:3.4" material="side:double; src:#door;" id="door-4" rotation="0 180 0"></a-entity>
 	<a-entity position="1.928 3.002 5.51" id="receptionLight" light=""></a-entity>
+	<!---reception desk-->
+	<a-entity obj-model="obj: #receptiontable-obj; mtl: #receptiontable-mtl" scale="0.5 0.5 0.5" position="-1 0 4.666" rotation="0 -90 0"></a-entity>
 
     </a-scene>
   </body>
