@@ -64,8 +64,8 @@
 	<a-entity position="0 1.522 8.9" geometry="primitive:plane;height:3;width:3.4" material="side:double; src:#door;" id="door-4" rotation="0 180 0"></a-entity>
 	<a-entity position="1.928 3.002 5.51" id="receptionLight" light=""></a-entity>
 	<!---reception desk-->
-	<a-entity obj-model="obj: #receptiontable-obj; mtl: #receptiontable-mtl" scale="0.5 0.5 0.5" position="-1 0 4.666" rotation="0 -90 0"></a-entity>
-
+	<a-entity obj-model="mtl:models/receptiondesk/receptiontable.mtl;obj:models/receptiondesk/receptiontable.obj" scale="0.5 0.5 0.5" position="-1 0 4.666" rotation="0 -90 0" id="receptiondesk"></a-entity>
+	<a-entity position="3.95 0 4.479" rotation="0 -180 0" obj-model="mtl:models\sofa\sofa.mtl;obj:models\sofa\sofa.obj" material="side:double;color:#3d32c0;emissive:#0a04dd"></a-entity>
     </a-scene>
   </body>
 </html>
