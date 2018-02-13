@@ -33,7 +33,7 @@
       </a-entity>
 	  
 <!---Environment--->		
-		  <a-entity environment="preset: forest; playArea:1.2899999999999998;  groundColor: #445;"></a-entity>
+		  <a-entity environment="preset: forest; playArea:1.3;  groundColor: #445;"></a-entity>
 <!---Play Area Colliders--->
   <a-entity position="0 0 0" rotation="-90 0 0" scale="50 50 0" geometry="primitive:plane" visible = "false" static-body></a-entity>
   <a-plane static-body position = "0 2.5 -18" color="#FFF" height="5" width="50" visible = "false"></a-plane>
@@ -65,7 +65,10 @@
 	<a-entity position="1.928 3.002 5.51" id="receptionLight" light=""></a-entity>
 	<!---reception desk-->
 	<a-entity obj-model="mtl:models/receptiondesk/receptiontable.mtl;obj:models/receptiondesk/receptiontable.obj" scale="0.5 0.5 0.5" position="-1 0 4.666" rotation="0 -90 0" id="receptiondesk"></a-entity>
-	<a-entity position="3.95 0 4.479" rotation="0 -180 0" obj-model="mtl:models\sofa\sofa.mtl;obj:models\sofa\sofa.obj" material="side:double;color:#3d32c0;emissive:#0a04dd"></a-entity>
+	<a-entity position="3.95 0 4.479" rotation="0 -180 0" obj-model="mtl:models\sofa\sofa.mtl;obj:models\sofa\sofa.obj" id="sofa"></a-entity>
+	<a-entity position="-0.75 1.241 5.81" rotation="90 0 0" scale="0.001 0.001 0.001" obj-model="mtl:models\iphonex\iphonex.mtl;obj:models\iphonex\iphonex.obj" id="iphonex"></a-entity>
+	<a-entity position="-0.863 1.422 4.137" obj-model="mtl:models\pen\pen.mtl;obj:models\pen\pen.obj" id="pen" scale="0.2 0.2 0.2"></a-entity>
+	
     </a-scene>
   </body>
 </html>
