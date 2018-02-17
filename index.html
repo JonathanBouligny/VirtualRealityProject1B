@@ -8,23 +8,9 @@
 		<script src="http://cdn.rawgit.com/donmccurdy/aframe-extras/v3.13.1/dist/aframe-extras.min.js"></script>
   </head>
   <body>
- <a-scene physics stats>
+ <a-scene stats>
  
- <a-assets>
- 	      <img id="floor" src="images/floor.jpg">
-		  <img id="ceiling" src="images/ceiling.jpg">
-		  <img id="wall" src="images/wall.jpg">
-		  <img id="exterior" src="images/exterior.jpg">
-		  <img id="stars" src="images/stars.jpg">
-		  <img id="sky" src="sky.jpg">
- </a-assets>	
-
- <!---Environment--->	
-<a-entity rotation="-90 0 0" visible="false" geometry="width:50;height:50;primitive:plane" static-body="sphereRadius:NaN" id="groundcollider"></a-entity>
-<a-sky src="#sky"></a-sky>
-<a-entity position="0 29.3 0" light="type:ambient" id="skylight"></a-entity>
- 
- <!---Player Camera--->
+			<!---Player Camera--->
 			<a-entity camera="userHeight: 1.6"
                 universal-controls
                 kinematic-body 
@@ -33,7 +19,6 @@
 				<a-entity raycaster="far: 150; objects: .intersectable" cursor geometry="primitive: ring; radiusOuter: 0.015;
                               radiusInner: 0.01; segmentsTheta: 32" material="color: #283644; shader: flat" position="0 0 -0.75"></a-entity>
 			</a-entity>
-
 
  </a-scene>
   </body>
