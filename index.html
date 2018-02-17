@@ -16,7 +16,9 @@
 		  <img id="ceiling" src="images/ceiling.jpg">
 		  <img id="wall" src="images/wall.jpg">
 		  <img id="exterior" src="images/exterior.jpg">
- </a-assets>
+		  <img id="stars" src="images/stars.jpg">
+ </a-assets>	
+
  <!---Environment--->	
  <a-entity environment="preset: forest; groundColor: #445; dressingAmount: 50; ground: flat;"; id="Environment"></a-entity>
 <a-entity rotation="-90 0 0" visible="false" geometry="width:50;height:50;primitive:plane" static-body="sphereRadius:NaN" id="groundcollider"></a-entity>
@@ -121,6 +123,28 @@
 		</a-entity>
 </a-entity>
 
+<a-entity position="7.114 2.046 5.519" rotation="0 -90 0" id="robotlight" light="distance:20;type:spot;intensity:0;color:#ffffff"></a-entity>
+
+ <script>
+		function robot()
+		{
+			var light = document.querySelector('#robotlight');
+			var isOn = light.getAttribute('intensity');
+			console.log(current_intensity);
+			
+			if(isOn ==  0)
+			{
+				light.setAttribute('intensity',1)
+			}
+			else if(isOn == 1)
+			{
+				light.setAttribute('intensity',0)
+			}
+		}
+</script>
+
+<a-entity position="9.136 1.694 5.196" id="robotbulb" geometry="primitive:sphere;radius:0.3" material="src:#stars"></a-entity>
+<a-box onclick="robot()" position="10.568 0.612 3.727" material=""></a-box>
  </a-scene>
   </body>
 </html>
