@@ -126,6 +126,7 @@
 			var light = document.querySelector('#robotlight');
 			var isOn = light.getAttribute('intensity');
 			
+<<<<<<< HEAD
 			console.log(isOn);
 			console.log(bulbMaterial);
 			
@@ -134,16 +135,28 @@
 				light.setAttribute('intensity',"1");
 			}	
 			else if(isOn == "1")
+=======
+			if(isOn ===  0)
+			{
+				light.setAttribute('intensity',1)
+			}
+			else if(isOn === 1)
+>>>>>>> 35fb93bc1c331d2cdf91492b57d36d55b01aebdd
 			{
 				light.setAttribute('intensity',"0");
 			}
 		}
 </script>
 
+<<<<<<< HEAD
 <a-light position="7.114 2.046 5.519" rotation="0 -90 0" id="robotlight" distance"20" type="spot" intensity="0" color="#ffffff"></a-light>
 <a-entity onclick="robot()" position="9.136 1.694 5.196" id="robotbulb" geometry="primitive:sphere;radius:0.3" material="src:#stars; metalness=1; emissive=#7f7f7f" class="intersectable"></a-entity>
 
 
+=======
+<a-entity position="9.136 1.694 5.196" id="robotbulb" geometry="primitive:sphere;radius:0.3" material="src:#stars"></a-entity>
+<a-box onClick="robot()" position="10.568 0.612 3.727" material=""></a-box>
+>>>>>>> 35fb93bc1c331d2cdf91492b57d36d55b01aebdd
  </a-scene>
   </body>
 </html>
