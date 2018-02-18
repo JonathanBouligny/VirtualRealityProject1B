@@ -147,6 +147,12 @@
 <a-text value="Click me and I'll dance!" position="0.741 -0.588 -0.162" rotation="0 180 0" id="dance"></a-text>
  </a-entity>
  
+ <!---boundaries--->
+<a-entity position="0 2.5 -25" geometry="primitive:plane;height:5;width:50" static-body="sphereRadius:NaN" id="boundary" visible="false"></a-entity>
+ <a-entity position="0 2.5 25" rotation="0 180 0" geometry="primitive:plane;height:5;width:50" static-body="sphereRadius:NaN" id="boundary-2" visible="false"></a-entity>
+ <a-entity position="-25 2.5 0" rotation="0 90 0" geometry="primitive:plane;height:5;width:50" static-body="sphereRadius:NaN" id="boundary-3" visible="false"></a-entity>
+ <a-entity position="25 2.5 0" rotation="0 -90 0" geometry="primitive:plane;height:5;width:50" static-body="sphereRadius:NaN" id="boundary-4" visible="false"></a-entity>
+ 
  </a-scene>
   </body>
 </html>
