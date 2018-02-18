@@ -31,7 +31,7 @@ The last component in the camera is the raycaster. Essentialy, raycasting shoots
 ### Office
 The office is composed of walls, the entrance area to walk through, and various objects. The walls are made up of two planes one is the outside plane the other is the inside plane. The inside plane is mainly for texturing. The outside plane is textured and also is a collider. It works this way for all external walls. The floor is mainly for texturing. The roof is also . hese are nto colliders because this is unnessessary for the floor, we have a global collider, and unnessesary for the roof, the player cant jump.
 
-All models are GLTF files. These files were easier to work with because the texture was prepackaged with the model, this made placement and scaling easier and helped decrease the amount of files in the file system, increasing simplicity.
+All models are GLTF files. GLTF stands for GL Transmission Format, which is a 3D scene file created withe JSON standard. This file These files were easier to work with because the texture was prepackaged with the model, this made placement and scaling easier and helped decrease the amount of files in the file system, increasing simplicity.
 
 The desks are for the first two people who work at this company to work at. These desks have computers and iphones on them. These are apple fans. They also have their own chairs.
 
@@ -39,6 +39,33 @@ The filing cabinets were previously in the office area and moved to the receptio
 
 The arcade machine is for fun, a very enjoyable experience for a quick 10 minute break. The TV is also there for breaks and viewing various assets. The kitchen of course is for eating as well as the fridge. This allows for productivity to increase. 
 
+### Reception
+
+Models are GLTF. All building pieces are as previosuly stated.
+
+The reception area was created for, of course, reception. It is manned by two autonomous drones. One is for entertainment of guests, the other is for administrative purposes. 
+
+The reception desk is made for the robot to stand in and he is sized accordingly. He never moves from there because why would he. The receptionist has a giant light on his head. This lets you know he is on, and currently doing receptionist things. When you click him his light turns on. His friend is a dancer. When you click him he does a little spin and moves forward. He dances for you.  Dance funny man dance. There is a pen for the robot. Not for him to take notes, but for the humans to leave notes for him. He enjoys theis. Also the humans use the pad. There is a sofa for sitting and waiting for your appointment and two plants to, as the robots like to put it, human up the room.
+
+## Script
+The robot() function in the only script is a function that controls the robots light. This was particularly challenging to build becuase I did not know that the types of most of the outputs are actually strings, not the integers that you assume they are. So intensity comes out as a string of numbers, and must be edited as such. 
+
+The function gets the item with the tag robot light. This is a light postioned in the head of the receptionist robot. Then we get the intensity atribute on the light. This intensity is set to 0 by default. This means that the light is off. THe logic for the next part goes as follows. First this script only activates when the bulb on the robot (the giant white piece) is intersected by a raycast. If when the light is intersected, the instensity is 0, meaning the light is off, turn the light on. If when the light is intersected, the intensity is 1 then turn the light off. Essentially the light turns to the oppisite state when it is clicked on.
+
+## Robot Light
+The light is, as previously stated, positioned in the head of the robot. The Bulb which is the clickable object  has the onclick fproperty which contains the robot() function. This means when this object is clicked it activates the robot function. This object is also intersectable so it can be intersected by raycasts, meaning clicked on. 
+
+There is also helpful text under the receptionist robot. This text reads, "Hi I'm a robot!". Another text bubble reads "Click my face to turn me on". This tells the user to click on the robots face which is the giant white bubble to turn him on. In order to assure that somethign like this happens the robots face is postioned right on the target reticle at the start of the scene. 
+
+## Dancer Robot
+The dancer robot is made up of serveral objects. These objects are the overall entity which is intersectable so it can be interacted with by the player. Then it has the GLTF model which is the robot. 
+
+Next we have the animations. The first animation has the parameter begin=click which means it begins when it is clicked. THe animation moves the robot from its starting postion to a postion a little forward from the robot. The second animation works the same way except it rotates the robot from its initial rotation to 360 degrees. This spins the robot. These two animations together make the robot look like he is doing a little spin dance.
+
+Under the robot is some helpful text. The first text reads "I'm a dancer!". The second text reads "Click me and I'll dance!". This gives the player the prompt to click the guy so we can see him do his animation. This text assures that the player will figure it out. This assumes the player has accidently or intentially clicked the receptionist robot.
+
+## Boundaries
+The boundaries were put up to keep the player from wandering off the stage. The stage has an infinite background, this could cause preformance issues. So the ground collider was only set to 50 by 50. Then extra colliders were added in around the playable area. This allows the player to wander around while not falling off the edge of the scene. The colliders are invisible planes with static bodies on them. These static bodies are 10 high, although this is unecessary.
 
 ## Sources
 
