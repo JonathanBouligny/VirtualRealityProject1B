@@ -7,11 +7,35 @@ A human scale scene experienced from the 'inside out'.
 
 ## Overview
 This project was constructed to be a human scale expereince from the inside out. Essentially it had to be a building. I chose to do a start up company because I thought that would be the most interesting. I did a small company. Two programmers with one server and a few robots to help out. Of course we had to have entertainment so there was robot entertainment. Its in the middle of a forest because thats soothing. This report will go line by line on the various parts of the code.
+## Libraries
+
+Of course, we used AFrame, the library that takes three.js using some other javascript to create an entity system to make creation of files easier. 
+
+Then I found and imported the AFrame Extras. These extras added key functionality like universal controls to the system. These universal controls allowed the scene to work on desktop and any mobile device. Basically, it detects the device and picks from some preset controls. The mobile controls are touch to move controls and the desktop is normal wasd. 
+
+Next, I found and imported the AFrame Environment. The environment library created an infinite background, which allowed the forest to appear more natural and for there to be a lot of forest. It creates a background from a standard library of files. This library is faster than any implementation because all the files and constructs come from the same place. It created a sun, the forest, and the ground. It did not interact well with physics, this was later compensated for and will be talked about later in the report.
 
 ## Assets
 I imported various jpg images to become the various textures for the planes that made up the building. These images were imported from sources cited in the end of this report. We needed to gather files for walls, the floor, the ceiling, and the exterior. The stars.jpg was the base file for the receptionist robots face. The file eventually was faded mostly out but is subtly used as the base for his face.
 
+## Environment
+The enviornment was an important part of the scene because it depicted exactly where I wanted my scene to be based. I wanted the comapny to be based in a forest, where me and a partner, perhaps a whole slew of people, could get lost in the majesty of a forest. Perhaps we would learn something new frolicking with the bird and the flowers. Anyway, I limited the amount of trees in the forest to 100 for preformance reasons. The environment package also didnt work well with physics, so a ground collider had to be added on the viable play area, which was defined at 50 by 50 squares by default. This was then boxed in by plane colliders to keep the player from walking too far for preformance reasons.
+
 ## Sources
+
+### Libraries
+
+AFrame
+
+https://github.com/aframevr/aframe
+
+AFrame-Extras
+
+https://github.com/donmccurdy/aframe-extras
+
+AFrame-Environment 
+
+https://github.com/feiss/aframe-environment-component
 
 ### Model Sources
 
