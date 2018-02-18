@@ -84,17 +84,14 @@
 			<a-entity position="0 2.5 10" rotation="0 -360 0" geometry="primitive:plane;height:5;width:10" material="src:#exterior; repeat: 10 10" id="10" static-body="sphereRadius:NaN"></a-entity>
 			<!---CUTOUT1--->
 			<a-entity position="5 2.5 8.75" rotation="0 -90 0" geometry="primitive:plane;height:5;width:2.5" material="src:#wall; repeat: 10 10" id="11"></a-entity>
-			<a-entity position="-5 2.5 8.75" rotation="0 -90 0" geometry="primitive:plane;height:5;width:2.5" material="" id="12"></a-entity>
 			<a-entity position="5 2.5 8.75" rotation="0 90 0" geometry="primitive:plane;height:5;width:2.5" material="src:#exterior; repeat: 10 10" id="13" static-body="sphereRadius:NaN"></a-entity>
 			<a-entity position="-5 2.5 8.75" rotation="0 90 0" geometry="primitive:plane;height:5;width:2.5" material="src:#wall; repeat: 10 10; side:double" id="14" static-body="sphereRadius:NaN"></a-entity>
 			<!---CUTOUT2--->
 			<a-entity position="5 2.5 1.25" rotation="0 -90 0" geometry="primitive:plane;height:5;width:2.5" material="src:#wall; repeat: 10 10" id="15"></a-entity>
-			<a-entity position="-5 2.5 1.25" rotation="0 -90 0" geometry="primitive:plane;height:5;width:2.5" material="" id="16"></a-entity>
 			<a-entity position="5 2.5 1.25" rotation="0 90 0" geometry="primitive:plane;height:5;width:2.5" material="src:#exterior; repeat: 10 10" id="17" static-body="sphereRadius:NaN"></a-entity>
 			<a-entity position="-5 2.5 1.25" rotation="0 90 0" geometry="primitive:plane;height:5;width:2.5" material="src:#wall; repeat: 10 10; side:double" id="18" static-body="sphereRadius:NaN"></a-entity>
 			<!---DOORTOP--->
 			<a-entity position="5 4.5 5" rotation="0 -90 0" geometry="primitive:plane;width:5" id="19" material="src:#wall; repeat: 10 10"></a-entity>
-			<a-entity position="-5 4.5 5" rotation="0 -90 0" geometry="primitive:plane;width:5" id="20" material=""></a-entity>
 			<a-entity position="5 4.5 5" rotation="0 90 0" geometry="primitive:plane;width:5" id="21" material="src:#exterior; repeat: 10 10"></a-entity>
 			<a-entity position="-5 4.5 5" rotation="0 90 0" geometry="primitive:plane;width:5" id="22" material="src:#wall; repeat: 3 3; side:double"></a-entity>
 			<!---ROOF--->
@@ -136,8 +133,17 @@
 
 <a-light position="7.114 2.046 5.519" rotation="0 -90 0" id="robotlight" distance"20" type="spot" intensity="0" color="#ffffff"></a-light>
 <a-entity onclick="robot()" position="9.136 1.694 5.196" id="robotbulb" geometry="primitive:sphere;radius:0.3" material="src:#stars; metalness=1; emissive=#7f7f7f" class="intersectable"></a-entity>
-<a-text value="Hello World!" position="0 5 5" color="#FFFFFF"></a-text>
-
+<a-text value="Hi I'm a robot!" position="10.167 0.847 5.806" color="#FFFFFF" rotation="0 90 0" text="value:Hi! Im a robot." id="Hi!"></a-text>
+<a-text value="Click my face to turn me on" position="10.167 0.536 6.503" color="#FFFFFF" rotation="0 90 0" text="value:Click my face to turn me on" id="TurnOn"></a-text>
+ 
+ <a-entity class="intersectable" position="12.027 1.447 8.821">
+<a-gltf-model src="models/receptionist/scene.gltf" gltf-model="models/receptionist/scene.gltf" id="dancer" rotation="0 180 0" scale="0.5 0.5 0.5"></a-gltf-model>
+<a-animation begin="click" attribute="position" from="12.027 1.447 8.821" to="12.027 1.447 6"></a-animation>
+<a-animation begin="click" attribute="rotation" to="0 360 0"></a-animation>
+<a-text value="I'm a dancer!" position="0.717 0 -0.812" rotation="0 180 0" id="dancer"></a-text>
+<a-text value="Click me and I'll dance!" position="0.741 -0.588 -0.162" rotation="0 180 0" id="dance"></a-text>
+ </a-entity>
+ 
  </a-scene>
   </body>
 </html>
