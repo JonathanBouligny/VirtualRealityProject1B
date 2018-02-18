@@ -114,6 +114,7 @@
 </a-entity>
 
 
+<!---script for turning on the robot--->
  <script>
 		function robot()
 		{
@@ -131,11 +132,13 @@
 		}
 </script>
 
+<!---robot light that turns on and off. robot bulb that is clickable. text to tell the player what to do--->
 <a-light position="7.114 2.046 5.519" rotation="0 -90 0" id="robotlight" distance"20" type="spot" intensity="0" color="#ffffff"></a-light>
 <a-entity onclick="robot()" position="9.136 1.694 5.196" id="robotbulb" geometry="primitive:sphere;radius:0.3" material="src:#stars; metalness=1; emissive=#7f7f7f" class="intersectable"></a-entity>
 <a-text value="Hi I'm a robot!" position="10.167 0.847 5.806" color="#FFFFFF" rotation="0 90 0" text="value:Hi! Im a robot." id="Hi!"></a-text>
 <a-text value="Click my face to turn me on" position="10.167 0.536 6.503" color="#FFFFFF" rotation="0 90 0" text="value:Click my face to turn me on" id="TurnOn"></a-text>
  
+ <!---the dancer robot. The model. the animations, and the text to tell the player what is going on--->
  <a-entity class="intersectable" position="12.027 1.447 8.821">
 <a-gltf-model src="models/receptionist/scene.gltf" gltf-model="models/receptionist/scene.gltf" id="dancer" rotation="0 180 0" scale="0.5 0.5 0.5"></a-gltf-model>
 <a-animation begin="click" attribute="position" from="12.027 1.447 8.821" to="12.027 1.447 6"></a-animation>
