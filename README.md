@@ -19,7 +19,26 @@ Next, I found and imported the AFrame Environment. The environment library creat
 I imported various jpg images to become the various textures for the planes that made up the building. These images were imported from sources cited in the end of this report. We needed to gather files for walls, the floor, the ceiling, and the exterior. The stars.jpg was the base file for the receptionist robots face. The file eventually was faded mostly out but is subtly used as the base for his face.
 
 ## Environment
-The enviornment was an important part of the scene because it depicted exactly where I wanted my scene to be based. I wanted the comapny to be based in a forest, where me and a partner, perhaps a whole slew of people, could get lost in the majesty of a forest. Perhaps we would learn something new frolicking with the bird and the flowers. Anyway, I limited the amount of trees in the forest to 100 for preformance reasons. The environment package also didnt work well with physics, so a ground collider had to be added on the viable play area, which was defined at 50 by 50 squares by default. This was then boxed in by plane colliders to keep the player from walking too far for preformance reasons.
+The enviornment was an important part of the scene because it depicted exactly where I wanted my scene to be based. I wanted the comapny to be based in a forest, where me and a partner, perhaps a whole slew of people, could get lost in the majesty of a forest. Perhaps we would learn something new frolicking with the bird and the flowers. Anyway, I limited the amount of trees in the forest to 100 for preformance reasons. The environment package also didnt work well with physics, so a ground collider had to be added on the viable play area, which was defined at 50 by 50 squares by default. This was then boxed in by plane colliders to keep the player from walking too far for preformance reasons. The ground was also made flat so the environment would not clip into the ground in the building.
+
+## Player Camera
+The player camera was developed using the example provided by our TA. It uses universal controls as previously talked about a kinematic body to interact with all the physics colliders and is postioned so that the scene opens facing the robot. It was also positioned so that you may accidently click on the robot when spawning into the scene. This reinforces that certain objects clearly labeled can be interacted with. Of course we also told the player that they could do these things so they won't get lost. 
+
+The last component in the camera is the raycaster. Essentialy, raycasting shoots out rays when the player clicks that go a certain distance in the direction the player clicked. These rays intersect objects and the intersection tells the object that the player wants to interact with this object. A key point of the raycasting mechanic was that we had to make objects intersectable or else the rays would never penetrate them. The rays go 150 units. The raycaster also gives a targeting reticle so the player can see where they are sending the rays out from to increase accuracy. 
+
+## Office Area
+
+### Office
+The office is composed of walls, the entrance area to walk through, and various objects. The walls are made up of two planes one is the outside plane the other is the inside plane. The inside plane is mainly for texturing. The outside plane is textured and also is a collider. It works this way for all external walls. The floor is mainly for texturing. The roof is also . hese are nto colliders because this is unnessessary for the floor, we have a global collider, and unnessesary for the roof, the player cant jump.
+
+All models are GLTF files. These files were easier to work with because the texture was prepackaged with the model, this made placement and scaling easier and helped decrease the amount of files in the file system, increasing simplicity.
+
+The desks are for the first two people who work at this company to work at. These desks have computers and iphones on them. These are apple fans. They also have their own chairs.
+
+The filing cabinets were previously in the office area and moved to the reception area. These are for various papers that are not secure on the cloud and other papers recieved in the mail. The white board in the corner is brought out for quick idea sketching and other ideas that paper may not be a big enough medium for.
+
+The arcade machine is for fun, a very enjoyable experience for a quick 10 minute break. The TV is also there for breaks and viewing various assets. The kitchen of course is for eating as well as the fridge. This allows for productivity to increase. 
+
 
 ## Sources
 
