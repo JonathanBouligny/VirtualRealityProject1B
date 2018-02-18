@@ -5,7 +5,7 @@
   <script src="https://rawgit.com/feiss/aframe-environment-component/master/dist/aframe-environment-component.min.js"></script>
   </head>
   <body>
-  <a-scene physics>
+  <a-scene stats physics>
  
  <a-assets>
  	      <img id="floor" src="images/floor.jpg">
@@ -17,7 +17,7 @@
 
  <!---Environment--->	
 <a-entity rotation="-90 0 0" visible="false" geometry="width:50;height:50;primitive:plane" static-body="sphereRadius:NaN" id="groundcollider"></a-entity>
-  <a-entity environment="preset: forest; groundColor: #445; dressingAmount:0; ground:flat" ></a-entity>
+  <a-entity environment="preset: forest; groundColor: #445; dressingAmount:100; ground:flat" ></a-entity>
 
  
  <!---Player Camera--->
