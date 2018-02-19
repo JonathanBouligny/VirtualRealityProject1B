@@ -15,11 +15,18 @@ Then I found and imported the AFrame Extras. These extras added key functionalit
 
 Next, I found and imported the AFrame Environment. The environment library created an infinite background, which allowed the forest to appear more natural and for there to be a lot of forest. It creates a background from a standard library of files. This library is faster than any implementation because all the files and constructs come from the same place. It created a sun, the forest, and the ground. It did not interact well with physics, this was later compensated for and will be talked about later in the report.
 
+![Environment](https://github.com/feiss/aframe-environment-component/raw/master/assets/aframeenvironment.gif?raw=true "Environment")
+From A-Frame Environment GitHub ReadMe
+
 ## Assets
 I imported various jpg images to become the various textures for the planes that made up the building. These images were imported from sources cited in the end of this report. We needed to gather files for walls, the floor, the ceiling, and the exterior. The stars.jpg was the base file for the receptionist robots face. The file eventually was faded mostly out but is subtly used as the base for his face.
 
 ## Environment
 The environment was an important part of the scene because it depicted exactly where I wanted my scene to be based. I wanted the company to be based in a forest, where me and a partner, perhaps a whole slew of people, could get lost in the majesty of a forest. Perhaps we would learn something new frolicking with the bird and the flowers. Anyway, I limited the number of trees in the forest to 100 for performance reasons. The environment package also didn’t work well with physics, so a ground collider had to be added on the viable play area, which was defined at 50 by 50 squares by default. This was then boxed in by plane colliders to keep the player from walking too far for performance reasons. The ground was also made flat, so the environment would not clip into the ground in the building.
+
+![Environment](https://puu.sh/zrauN/9a073f31fe.png "Environment")
+From A-Frame Environment GitHub ReadMe
+
 
 ## Player Camera
 The player camera was developed using the example provided by our TA. It uses universal controls as previously talked about a kinematic body to interact with all the physics colliders and is positioned so that the scene opens facing the robot. It was also positioned so that you may accidently click on the robot when spawning into the scene. This reinforces that certain objects clearly labeled can be interacted with. Of course, we also told the player that they could do these things so they won't get lost. 
