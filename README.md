@@ -16,6 +16,7 @@ Then I found and imported the AFrame Extras. These extras added key functionalit
 Next, I found and imported the AFrame Environment. The environment library created an infinite background, which allowed the forest to appear more natural and for there to be a lot of forest. It creates a background from a standard library of files. This library is faster than any implementation because all the files and constructs come from the same place. It created a sun, the forest, and the ground. It did not interact well with physics, this was later compensated for and will be talked about later in the report.
 
 ![Environment](https://github.com/feiss/aframe-environment-component/raw/master/assets/aframeenvironment.gif?raw=true "Environment")
+
 From A-Frame Environment GitHub ReadMe
 
 ## Assets
@@ -25,8 +26,8 @@ I imported various jpg images to become the various textures for the planes that
 The environment was an important part of the scene because it depicted exactly where I wanted my scene to be based. I wanted the company to be based in a forest, where me and a partner, perhaps a whole slew of people, could get lost in the majesty of a forest. Perhaps we would learn something new frolicking with the bird and the flowers. Anyway, I limited the number of trees in the forest to 100 for performance reasons. The environment package also didn’t work well with physics, so a ground collider had to be added on the viable play area, which was defined at 50 by 50 squares by default. This was then boxed in by plane colliders to keep the player from walking too far for performance reasons. The ground was also made flat, so the environment would not clip into the ground in the building.
 
 ![Environment](https://puu.sh/zrauN/9a073f31fe.png "Environment")
-From A-Frame Environment GitHub ReadMe
 
+Screenshot of the Environment in Scene
 
 ## Player Camera
 The player camera was developed using the example provided by our TA. It uses universal controls as previously talked about a kinematic body to interact with all the physics colliders and is positioned so that the scene opens facing the robot. It was also positioned so that you may accidently click on the robot when spawning into the scene. This reinforces that certain objects clearly labeled can be interacted with. Of course, we also told the player that they could do these things so they won't get lost. 
@@ -46,6 +47,10 @@ The filing cabinets were previously in the office area and moved to the receptio
 
 The arcade machine is for fun, a very enjoyable experience for a quick 10-minute break. The TV is also there for breaks and viewing various assets. The kitchen of course is for eating as well as the fridge. This allows for productivity to increase. 
 
+
+![Office](https://puu.sh/zraEV/fa21136a8a.jpg "Office")
+
+
 ### Reception
 
 Models are GLTF. All building pieces are as previously stated.
@@ -54,10 +59,16 @@ The reception area was created for, of course, reception. It is manned by two au
 
 The reception desk is made for the robot to stand in and he is sized accordingly. He never moves from there because why would he. The receptionist has a giant light on his head. This lets you know he is on, and currently doing receptionist things. When you click him his light turns on. His friend is a dancer. When you click him, he does a little spin and moves forward. He dances for you.  Dance funny man dance. There is a pen for the robot. Not for him to take notes, but for the humans to leave notes for him. He enjoys this. Also, the humans use the pad. There is a sofa for sitting and waiting for your appointment and two plants to, as the robots like to put it, human up the room.
 
+![Reception](https://puu.sh/zraF0/0e77fd30e6.jpg "Reception")
+
+
 ## Script
 The robot() function in the only script is a function that controls the robots light. This was particularly challenging to build because I did not know that the types of most of the outputs are strings, not the integers that you assume they are. So, intensity comes out as a string of numbers, and must be edited as such. 
 
 The function gets the item with the tag robot light. This is a light positioned in the head of the receptionist robot. Then we get the intensity attribute on the light. This intensity is set to 0 by default. This means that the light is off. The logic for the next part goes as follows. First this script only activates when the bulb on the robot (the giant white piece) is intersected by a ray-cast. If when the light is intersected, the intensity is 0, meaning the light is off, turn the light on. If when the light is intersected, the intensity is 1 then turn the light off. Essentially the light turns to the opposite state when it is clicked on.
+
+![Script](https://puu.sh/zraEV/fa21136a8a.jpg "Script")
+
 
 ## Robot Light
 The light is, as previously stated, positioned in the head of the robot. The Bulb which is the clickable object has the onclick property which contains the robot() function. This means when this object is clicked it activates the robot function. This object is also intersectable so it can be intersected by ray-casts, meaning clicked on. 
