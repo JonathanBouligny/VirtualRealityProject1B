@@ -50,6 +50,8 @@ The arcade machine is for fun, a very enjoyable experience for a quick 10-minute
 
 ![Office](https://puu.sh/zraEV/fa21136a8a.jpg "Office")
 
+Office Area screenshot from level
+
 
 ### Reception
 
@@ -61,6 +63,8 @@ The reception desk is made for the robot to stand in and he is sized accordingly
 
 ![Reception](https://puu.sh/zraF0/0e77fd30e6.jpg "Reception")
 
+Reception area screenshot from level
+
 
 ## Script
 The robot() function in the only script is a function that controls the robots light. This was particularly challenging to build because I did not know that the types of most of the outputs are strings, not the integers that you assume they are. So, intensity comes out as a string of numbers, and must be edited as such. 
@@ -68,6 +72,8 @@ The robot() function in the only script is a function that controls the robots l
 The function gets the item with the tag robot light. This is a light positioned in the head of the receptionist robot. Then we get the intensity attribute on the light. This intensity is set to 0 by default. This means that the light is off. The logic for the next part goes as follows. First this script only activates when the bulb on the robot (the giant white piece) is intersected by a ray-cast. If when the light is intersected, the intensity is 0, meaning the light is off, turn the light on. If when the light is intersected, the intensity is 1 then turn the light off. Essentially the light turns to the opposite state when it is clicked on.
 
 ![Script](https://puu.sh/zraEV/fa21136a8a.jpg "Script")
+
+Script area screenshot from level
 
 
 ## Robot Light
