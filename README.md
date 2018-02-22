@@ -1,4 +1,7 @@
 # Virtual Reality Project 1
+
+### TIP FOR iOS GO TO THE WEBPAGE IN SAFARI AND CLICK ADD TO HOME SCREEN AND RUN THE PROJECT FROM THE HOME SCREEN AND IT WILL LOOK AND RUN MORE EFFECTIVELY
+
 A human scale scene experienced from the 'inside out'.
 
 ## Video Overview
